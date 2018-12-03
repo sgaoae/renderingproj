@@ -1,0 +1,21 @@
+{
+  "name": "renderingproj",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf ./build/* && webpack --config webpack.config.js",
+    "server": "python -m SimpleHTTPServer 7777"
+  },
+  "dependencies": {
+    "three": "^0.97.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^4.24.0",
+    "webpack-cli": "^3.1.2"
+  }
+}

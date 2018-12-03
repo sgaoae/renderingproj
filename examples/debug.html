@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>rendering project</title>
+    <body>
+      <script src="../node_modules/three/build/three.js"></script>
+      <script src="../node_modules/three/examples/js/controls/OrbitControls.js"></script>
+      <script src="../node_modules/three/examples/js/loaders/OBJLoader.js"></script>
+      <script src="../node_modules/three/examples/js/loaders/MTLLoader.js"></script>
+      <script src="../build/rendering_bundle.js"></script>
+      <script src="../node_modules/three/examples/js/libs/dat.gui.min.js"></script>
+      <script>
+        window.orbitControls = new THREE.OrbitControls(window.camera, window.renderer.domElement)
+
+        let guicolor2threecolor = (guicolor) => {
+          return new THREE.Color(
+            guicolor.r / 255,
+            guicolor.g / 255,
+            guicolor.b / 255
+          )
+        }
+        let threecolor2guicolor = (threecolor) => {
+          return new THREE.Color(
+            threecolor.r * 255,
+            threecolor.g * 255,
+            threecolor.b * 255
+          )
+        }
+        let gui = new dat.GUI()
+        let properties = {
+          // color: threecolor2guicolor(material.uniforms.color.value),
+          lightColor: threecolor2guicolor(material.uniforms.lightColor.value),
+          headLightColor0: threecolor2guicolor(material.uniforms.headLight0.value.color),
+          headLightColor1: threecolor2guicolor(material.uniforms.headLight1.value.color),
+          heightInterval: material.uniforms.heightInterval.value,
+          lineWidth: material.uniforms.lineWidth.value
+        }
+        // gui.addColor(properties, 'color').onChange((v) => {
+        //   let threecolor = guicolor2threecolor(v)
+        //   material.uniforms.color.value = threecolor
+        // })
+        gui.addColor(properties, 'lightColor').onChange((v) => {
+          let threecolor = guicolor2threecolor(v)
+          material.uniforms.lightColor.value = threecolor
+        })
+        gui.addColor(properties, 'headLightColor0').onChange((v) => {
+          let threecolor = guicolor2threecolor(v)
+          material.uniforms.headLight0.value.color = threecolor
+        })
+        gui.addColor(properties, 'headLightColor1').onChange((v) => {
+          let threecolor = guicolor2threecolor(v)
+          material.uniforms.headLight1.value.color = threecolor
+        })
+        gui.add(properties, 'heightInterval', 1, 50, 0.1).onChange((v) => {
+          material.uniforms.heightInterval.value = v
+        })
+        gui.add(properties, 'lineWidth', 1, 50, 0.1).onChange((v) => {
+          material.uniforms.lineWidth.value = v
+        })
+        gui.add(window, 'cameraOut')
+        gui.add(window, 'cameraFollowCar')
+        gui.add(controls, '_speed').name('speed').listen()
+        gui.add(window, 'score').listen()
+        gui.add(window, 'accTime').name('Time (s):').listen()
+      </script>
+    </body>
+  </head>
+</html>
