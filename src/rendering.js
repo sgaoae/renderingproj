@@ -53,32 +53,32 @@ var skyGeo = new CubeGeometry(8000, 8000, 8000)
 var cubeMaterials = [
   // back side
   new MeshBasicMaterial({
-    map: new TextureLoader().load('back.jpg'),
+    map: new TextureLoader().load('./examples/back.jpg'),
     side: DoubleSide
   }),
   // front side
   new MeshBasicMaterial({
-    map: new TextureLoader().load('front.jpg'),
+    map: new TextureLoader().load('./examples/front.jpg'),
     side: DoubleSide
   }), 
   // Top side
   new MeshBasicMaterial({
-    map: new TextureLoader().load('top.jpg'),
+    map: new TextureLoader().load('./examples/top.jpg'),
     side: DoubleSide
   }), 
   // Bottom side
   new MeshBasicMaterial({
-    map: new TextureLoader().load('bottom.jpg'),
+    map: new TextureLoader().load('./examples/bottom.jpg'),
     side: DoubleSide
   }), 
   // right side
   new MeshBasicMaterial({
-    map: new TextureLoader().load('right.jpg'),
+    map: new TextureLoader().load('./examples/right.jpg'),
     side: DoubleSide
   }), 
   // left side
   new MeshBasicMaterial({
-    map: new TextureLoader().load('left.jpg'),
+    map: new TextureLoader().load('./examples/left.jpg'),
     side: DoubleSide
   }) 
 ];
@@ -330,7 +330,7 @@ window.cameraOut = () => {
 }
 
 // use new car
-loadmtlobj('../public/obj/BMW X5 4.mtl', '../public/obj/BMW X5 4.obj', (group) => {
+loadmtlobj('./public/obj/BMW X5 4.mtl', './public/obj/BMW X5 4.obj', (group) => {
   // group.rotateX(Math.PI/2)
   group.rotateY(-Math.PI/2)
 

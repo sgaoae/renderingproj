@@ -787,32 +787,32 @@ var skyGeo = new _three.CubeGeometry(8000, 8000, 8000);
 var cubeMaterials = [
 // back side
 new _three.MeshBasicMaterial({
-  map: new _three.TextureLoader().load('back.jpg'),
+  map: new _three.TextureLoader().load('./examples/back.jpg'),
   side: _three.DoubleSide
 }),
 // front side
 new _three.MeshBasicMaterial({
-  map: new _three.TextureLoader().load('front.jpg'),
+  map: new _three.TextureLoader().load('./examples/front.jpg'),
   side: _three.DoubleSide
 }),
 // Top side
 new _three.MeshBasicMaterial({
-  map: new _three.TextureLoader().load('top.jpg'),
+  map: new _three.TextureLoader().load('./examples/top.jpg'),
   side: _three.DoubleSide
 }),
 // Bottom side
 new _three.MeshBasicMaterial({
-  map: new _three.TextureLoader().load('bottom.jpg'),
+  map: new _three.TextureLoader().load('./examples/bottom.jpg'),
   side: _three.DoubleSide
 }),
 // right side
 new _three.MeshBasicMaterial({
-  map: new _three.TextureLoader().load('right.jpg'),
+  map: new _three.TextureLoader().load('./examples/right.jpg'),
   side: _three.DoubleSide
 }),
 // left side
 new _three.MeshBasicMaterial({
-  map: new _three.TextureLoader().load('left.jpg'),
+  map: new _three.TextureLoader().load('./examples/left.jpg'),
   side: _three.DoubleSide
 })];
 var skyMaterial = new _three.MeshFaceMaterial(cubeMaterials);
@@ -1049,7 +1049,7 @@ window.cameraOut = function () {
 };
 
 // use new car
-(0, _LoadUtils.loadmtlobj)('../public/obj/BMW X5 4.mtl', '../public/obj/BMW X5 4.obj', function (group) {
+(0, _LoadUtils.loadmtlobj)('./public/obj/BMW X5 4.mtl', './public/obj/BMW X5 4.obj', function (group) {
   // group.rotateX(Math.PI/2)
   group.rotateY(-Math.PI / 2);
 

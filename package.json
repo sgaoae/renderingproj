@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf ./build/* && webpack --config webpack.config.js",
-    "server": "python -m SimpleHTTPServer 7777"
+    "build": "rm -rf ./build/* && webpack --config webpack.config.d.js",
+    "release": "rm -rf ./release/* && webpack --config webpack.config.js",
+    "server": "python -m http.server 7777"
   },
   "dependencies": {
     "three": "^0.97.0"

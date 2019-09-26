@@ -1,14 +1,14 @@
 const path = require('path')
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: [
     './src/rendering.js'
   ],
-  // devtool: 'source-map',
+  devtool: 'source-map',
   output: {
-    path: path.resolve(__dirname, 'release'),
-    filename: 'rendering_bundle.min.js',
+    path: path.resolve(__dirname, 'build'),
+    filename: 'rendering_bundle.js',
     library: 'rendering',
     libraryTarget: 'umd'
   },
@@ -19,7 +19,7 @@ module.exports = {
       commonjs2: 'three'
     }
   },
-  // watch: true,
+  watch: true,
   module: {
     rules: [
       {
